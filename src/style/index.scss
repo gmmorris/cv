@@ -1,0 +1,199 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "./fonts";
+
+body {
+	h1,
+	h2,
+	h3,
+	h4 {
+		font-family: "Oswald", sans-serif;
+	}
+	h1 {
+		font-weight: 400;
+		font-size: 4em;
+		font-variant-caps: all-small-caps;
+		text-align: center;
+		em {
+			font-style: normal;
+			font-weight: 200;
+		}
+	}
+	h2 {
+		text-align: center;
+		font-weight: 200;
+		line-height: 1.5;
+		font-size: 1.5em;
+	}
+	h3 {
+		text-align: center;
+		font-weight: 100;
+		line-height: 1.5;
+		margin: 0.5rem 0rem;
+	}
+	h4 {
+		font-family: "Oswald", sans-serif;
+		font-weight: 400;
+		line-height: 1.5;
+	}
+	p {
+		padding: 0em;
+		text-align: justify;
+		font-family: "Jost*", Helvetica, Arial, sans-serif;
+	}
+	span {
+		font-family: "Jost*", Helvetica, Arial, sans-serif;
+	}
+}
+#contact,
+#resume-links {
+	text-align: center;
+	margin-left: 0em;
+	margin-right: 0em;
+	li {
+		font-family: "Jost*", Helvetica, Arial, sans-serif;
+		display: inline;
+		span {
+			color: initial;
+		}
+		a {
+			font-style: normal;
+			font-weight: lighter;
+			em {
+				font-weight: initial;
+			}
+		}
+	}
+	li + li {
+		margin-left: 3em;
+	}
+}
+#resume-links {
+	padding: 1em 0em;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+}
+#download-links {
+	position: fixed;
+	top: 2em;
+	right: 2em;
+}
+
+#skills {
+	ul {
+		padding: 0em;
+		li {
+			list-style: none;
+			text-align: justify;
+			margin-bottom: 0.5em;
+		}
+	}
+}
+
+#oss {
+	page-break-inside: avoid;
+	> a {
+		text-align: right;
+		display: block;
+	}
+	> span {
+		position: relative;
+		top: -0.7em;
+		font-size: 1em;
+		text-align: center;
+	}
+	ul {
+		li {
+			padding-bottom: 0.5em;
+			span {
+				color: initial;
+				font-weight: normal;
+			}
+			a {
+				text-decoration: none;
+			}
+			.fa-li.fa-stack {
+				position: absolute;
+				left: -3em;
+				@extend .d-print-none;
+			}
+		}
+	}
+	> div {
+		margin-left: -2.5em;
+	}
+	> p {
+		padding: 0em;
+	}
+}
+
+#positions,
+#edu {
+	> ol {
+		padding-inline-start: 0em;
+		margin-block-start: 0em;
+		> li {
+			page-break-inside: avoid;
+			position: relative;
+			list-style: none;
+			h4 {
+				display: inline;
+				font-weight: 400;
+			}
+			h4 + em {
+				display: inline;
+				font-family: "Oswald", sans-serif;
+				font-weight: 400;
+				font-style: normal;
+				padding-left: 1em;
+			}
+			p {
+				padding: 1em 0em 0em 1em;
+			}
+			ol {
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				li {
+					display: inline;
+				}
+				li + li:before {
+					content: "-";
+					margin: 0em 0.25em;
+				}
+			}
+		}
+	}
+}
+
+#edu {
+	page-break-inside: avoid;
+	> ol {
+		> li {
+			margin: 0em;
+			h5 + em,
+			h4 + em,
+			p {
+				display: block;
+			}
+			p {
+				padding: 1em 0em;
+			}
+			h5,
+			em {
+				font-family: "Oswald", sans-serif;
+				font-weight: 100;
+				font-style: normal;
+			}
+		}
+	}
+}
+
+.sidebar {
+	p {
+		padding: 0em;
+	}
+}
+
+// #who-am-i {
+// 	padding: 1rem;
+// }
