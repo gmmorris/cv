@@ -4,8 +4,8 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "parcel src/index.html -d docs  --public-url ./",
-		"build": "parcel build src/index.html -d docs  --public-url ./",
+		"dev": "parcel src/index.html --dist-dir docs  --public-url ./",
+		"build": "parcel build src/index.html --dist-dir docs  --public-url ./",
 		"deploy": "git subtree push --prefix docs origin gh-pages"
 	},
 	"author": "",
@@ -14,8 +14,9 @@
 		"bootstrap": "^4.4.1"
 	},
 	"devDependencies": {
-		"cssnano": "^4.1.10",
-		"parcel": "^1.12.4",
+		"@parcel/transformer-sass": "^2.3.2",
+		"cssnano": "^5.1.4",
+		"parcel": "^2.3.2",
 		"sass": "^1.26.5"
 	}
 }
