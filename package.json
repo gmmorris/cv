@@ -2,7 +2,6 @@
 	"name": "white-cv",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
 	"scripts": {
 		"dev": "parcel src/index.html --dist-dir docs  --public-url ./",
 		"build": "parcel build src/index.html --dist-dir docs  --public-url ./",
@@ -10,13 +9,13 @@
 	},
 	"author": "",
 	"license": "ISC",
-	"dependencies": {
-		"bootstrap": "^4.4.1"
-	},
 	"devDependencies": {
-		"@parcel/transformer-sass": "^2.3.2",
-		"cssnano": "^5.1.4",
-		"parcel": "^2.3.2",
-		"sass": "^1.26.5"
+		"@parcel/transformer-sass": "^2.5.0",
+		"cssnano": "^5.1.8",
+		"parcel": "^2.5.0",
+		"sass": "^1.51.0"
+	},
+	"dependencies": {
+		"bootstrap": "^5.1.3"
 	}
 }
