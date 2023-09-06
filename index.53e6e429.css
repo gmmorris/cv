@@ -12226,6 +12226,7 @@ body span {
 }
 
 #positions > ol > li h4, #positions > ol > li .h4, #edu > ol > li h4, #edu > ol > li .h4 {
+  font-size: 1.3rem;
   font-weight: 400;
   display: inline;
 }
