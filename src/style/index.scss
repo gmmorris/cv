@@ -7,11 +7,35 @@ html {
 @media only screen and (min-width: 992px) {
 	html {
 		font-size: inherit;
+		body {
+			h1, h2 {
+				text-align: left;
+			}
+		}
+	}
+}
+@media only screen and (min-width: 992px) {
+	html {
+		font-size: inherit;
+		body {
+			h1, h2 {
+				text-align: left;
+			}
+		}
 	}
 }
 @media print {
 	html {
 		font-size: inherit;
+		body {
+			h1, h2 {
+				text-align: left;
+			}
+		}
+	}
+	@page { 
+		size: auto;
+		margin-top: 20mm;
 	}
 	.col-print-1 {width:8%;  float:left;}
 	.col-print-2 {width:16%; float:left;}
@@ -28,8 +52,8 @@ html {
 }
 
 body {
-	h1,
-	h2,
+	h1 span,
+	h2 span,
 	h4 {
 		font-family: "Oswald", sans-serif;
 	}
@@ -39,19 +63,24 @@ body {
 	}
 	h1 {
 		font-weight: 400;
-		font-size: 4em;
+		font-size: 3rem;
 		font-variant-caps: all-small-caps;
-		text-align: center;
 		em {
 			font-style: normal;
 			font-weight: 200;
 		}
 	}
 	h2 {
-		text-align: center;
+		padding-top: 0.1em;
 		font-weight: 200;
-		line-height: 1.5;
-		font-size: 1.5em;
+		font-size: 2rem;
+		line-height: 2em;
+	}
+	h1, h2 {
+		text-align: center;
+		span {
+			vertical-align: baseline;
+		}
 	}
 	h3 {
 		font-weight: 100;
@@ -68,7 +97,7 @@ body {
 		text-align: justify;
 		font-family: "Jost*", Helvetica, Arial, sans-serif;
 	}
-	span {
+	#skills li, span {
 		font-family: "Jost*", Helvetica, Arial, sans-serif;
 	}
 }
@@ -180,7 +209,7 @@ body {
 			h4 {
 				display: inline;
 				font-weight: 400;
-				font-size: 1.3rem;
+				// font-size: 1.3rem;
 			}
 			h4 + em {
 				display: inline;
@@ -193,6 +222,7 @@ body {
 				padding: 1em 0em 0em 1em;
 			}
 			ol {
+				line-height: 2em;
 				float: right;
 				li {
 					display: inline;
