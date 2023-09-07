@@ -1,6 +1,20 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "./fonts";
 
+html {
+	font-size: calc(1em + 1vw);
+}
+@media only screen and (min-width: 992px) {
+	html {
+		font-size: inherit;
+	}
+}
+@media print {
+	html {
+		font-size: inherit;
+	}
+}
+
 body {
 	h1,
 	h2,
@@ -157,9 +171,7 @@ body {
 				padding: 1em 0em 0em 1em;
 			}
 			ol {
-				position: absolute;
-				top: 0px;
-				right: 0px;
+				float: right;
 				li {
 					display: inline;
 				}
