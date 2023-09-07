@@ -4,9 +4,12 @@
 body {
 	h1,
 	h2,
-	h3,
 	h4 {
 		font-family: "Oswald", sans-serif;
+	}
+	h3 {
+		font-family: 'Montserrat', sans-serif;
+		font-family: 'Noto Sans Mahajani', sans-serif;
 	}
 	h1 {
 		font-weight: 400;
@@ -25,7 +28,6 @@ body {
 		font-size: 1.5em;
 	}
 	h3 {
-		text-align: center;
 		font-weight: 100;
 		line-height: 1.5;
 		margin: 0.5rem 0rem;
@@ -129,6 +131,9 @@ body {
 
 #positions,
 #edu {
+	h3 {
+		text-align: left;
+	}
 	> ol {
 		padding-inline-start: 0em;
 		margin-block-start: 0em;
