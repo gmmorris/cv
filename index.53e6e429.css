@@ -12089,6 +12089,66 @@ html {
   html {
     font-size: inherit;
   }
+
+  .col-print-1 {
+    width: 8%;
+    float: left;
+  }
+
+  .col-print-2 {
+    width: 16%;
+    float: left;
+  }
+
+  .col-print-3 {
+    width: 25%;
+    float: left;
+  }
+
+  .col-print-4 {
+    width: 33%;
+    float: left;
+  }
+
+  .col-print-5 {
+    width: 42%;
+    float: left;
+  }
+
+  .col-print-6 {
+    width: 50%;
+    float: left;
+  }
+
+  .col-print-7 {
+    width: 58%;
+    float: left;
+  }
+
+  .col-print-8 {
+    width: 66%;
+    float: left;
+  }
+
+  .col-print-9 {
+    width: 75%;
+    float: left;
+  }
+
+  .col-print-10 {
+    width: 83%;
+    float: left;
+  }
+
+  .col-print-11 {
+    width: 92%;
+    float: left;
+  }
+
+  .col-print-12 {
+    width: 100%;
+    float: left;
+  }
 }
 
 body h1, body .h1, body h2, body .h2, body h4, body .h4 {
@@ -12140,6 +12200,21 @@ body span {
   font-family: Jost\*, Helvetica, Arial, sans-serif;
 }
 
+#download-links {
+  text-align: right;
+  margin-bottom: 0;
+  line-height: 3em;
+  position: static;
+}
+
+@media only screen and (min-width: 992px) {
+  #download-links {
+    position: fixed;
+    top: 2em;
+    right: 2em;
+  }
+}
+
 #contact, #resume-links {
   text-align: center;
   margin-left: 0;
@@ -12174,12 +12249,6 @@ body span {
   padding: 1em 0;
 }
 
-#download-links {
-  position: fixed;
-  top: 2em;
-  right: 2em;
-}
-
 #skills ul {
   padding: 0;
 }
@@ -12187,7 +12256,6 @@ body span {
 #skills ul li {
   text-align: justify;
   margin-bottom: .5em;
-  font-size: small;
   list-style: none;
 }
 
