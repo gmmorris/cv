@@ -12000,7 +12000,7 @@ textarea.form-control-lg {
     display: inline-flex !important;
   }
 
-  .d-print-none, #oss ul li .fa-li.fa-stack {
+  .d-print-none, body #oss ul li .fa-li.fa-stack {
     display: none !important;
   }
 }
@@ -12228,7 +12228,7 @@ body #skills li, body span {
   font-family: Jost\*, Helvetica, Arial, sans-serif;
 }
 
-#download-links {
+body #download-links {
   text-align: right;
   margin-bottom: 0;
   line-height: 3em;
@@ -12236,120 +12236,124 @@ body #skills li, body span {
 }
 
 @media only screen and (min-width: 992px) {
-  #download-links {
+  body #download-links {
     position: fixed;
     top: 2em;
     right: 2em;
   }
 }
 
-#contact, #resume-links {
+body #contact, body #resume-links {
   text-align: center;
   margin-left: 0;
   margin-right: 0;
 }
 
-#contact li, #resume-links li {
+body #contact li, body #resume-links li {
   font-family: Jost\*, Helvetica, Arial, sans-serif;
   display: inline;
 }
 
-#contact li span, #resume-links li span {
+body #contact li span, body #resume-links li span {
   color: initial;
 }
 
-#contact li a, #resume-links li a {
+body #contact li a, body #resume-links li a {
   font-style: normal;
   font-weight: lighter;
 }
 
-#contact li a em, #resume-links li a em {
+body #contact li a em, body #resume-links li a em {
   font-weight: initial;
 }
 
-#contact li + li, #resume-links li + li {
+body #contact li + li, body #resume-links li + li {
   margin-left: 3em;
 }
 
-#resume-links {
+body #resume-links {
   border-top: 1px solid;
   border-bottom: 1px solid;
   padding: 1em 0;
 }
 
-#skills ul {
+body #profile p {
+  padding: 0 1em;
+}
+
+body #skills ul {
   padding: 0;
 }
 
-#skills ul li {
+body #skills ul li {
   text-align: justify;
   margin-bottom: .5em;
   list-style: none;
 }
 
-#oss {
+body #oss {
   page-break-inside: avoid;
 }
 
-#oss > a {
+body #oss > a {
   text-align: right;
   display: block;
 }
 
-#oss > span {
+body #oss > span {
   text-align: center;
   font-size: 1em;
   position: relative;
   top: -.7em;
 }
 
-#oss ul li {
+body #oss ul li {
   padding-bottom: .5em;
 }
 
-#oss ul li span {
+body #oss ul li span {
   color: initial;
   font-weight: normal;
 }
 
-#oss ul li a {
+body #oss ul li a {
   text-decoration: none;
 }
 
-#oss ul li .fa-li.fa-stack {
+body #oss ul li .fa-li.fa-stack {
   position: absolute;
   left: -3em;
 }
 
-#oss > div {
+body #oss > div {
   margin-left: -2.5em;
 }
 
-#oss > p {
+body #oss > p {
   padding: 0;
 }
 
-#positions h3, #positions .h3, #edu h3, #edu .h3 {
+body #positions h3, body #positions .h3, body #edu h3, body #edu .h3 {
   text-align: left;
 }
 
-#positions > ol, #edu > ol {
+body #positions > ol, body #edu > ol {
   margin-block-start: 0;
   padding-inline-start: 0;
 }
 
-#positions > ol > li, #edu > ol > li {
+body #positions > ol > li, body #edu > ol > li {
   page-break-inside: avoid;
   list-style: none;
   position: relative;
 }
 
-#positions > ol > li h4, #positions > ol > li .h4, #edu > ol > li h4, #edu > ol > li .h4 {
+body #positions > ol > li h4, body #positions > ol > li .h4, body #edu > ol > li h4, body #edu > ol > li .h4 {
   font-weight: 400;
   display: inline;
 }
 
-#positions > ol > li h4 + em, #positions > ol > li .h4 + em, #edu > ol > li h4 + em, #edu > ol > li .h4 + em {
+body #positions > ol > li h4 + em, body #positions > ol > li .h4 + em, body #edu > ol > li h4 + em, body #edu > ol > li .h4 + em {
   padding-left: 1em;
   font-family: Oswald, sans-serif;
   font-style: normal;
@@ -12357,47 +12361,47 @@ body #skills li, body span {
   display: inline;
 }
 
-#positions > ol > li p, #edu > ol > li p {
+body #positions > ol > li p, body #edu > ol > li p {
   padding: 1em 0 0 1em;
 }
 
-#positions > ol > li ol, #edu > ol > li ol {
+body #positions > ol > li ol, body #edu > ol > li ol {
   float: right;
   line-height: 2em;
 }
 
-#positions > ol > li ol li, #edu > ol > li ol li {
+body #positions > ol > li ol li, body #edu > ol > li ol li {
   display: inline;
 }
 
-#positions > ol > li ol li + li:before, #edu > ol > li ol li + li:before {
+body #positions > ol > li ol li + li:before, body #edu > ol > li ol li + li:before {
   content: "-";
   margin: 0 .25em;
 }
 
-#edu {
+body #edu {
   page-break-inside: avoid;
 }
 
-#edu > ol > li {
+body #edu > ol > li {
   margin: 0;
 }
 
-#edu > ol > li h5 + em, #edu > ol > li .h5 + em, #edu > ol > li h4 + em, #edu > ol > li .h4 + em, #edu > ol > li p {
+body #edu > ol > li h5 + em, body #edu > ol > li .h5 + em, body #edu > ol > li h4 + em, body #edu > ol > li .h4 + em, body #edu > ol > li p {
   display: block;
 }
 
-#edu > ol > li p {
+body #edu > ol > li p {
   padding: 1em 0;
 }
 
-#edu > ol > li h5, #edu > ol > li .h5, #edu > ol > li em {
+body #edu > ol > li h5, body #edu > ol > li .h5, body #edu > ol > li em {
   font-family: Oswald, sans-serif;
   font-style: normal;
   font-weight: 100;
 }
 
-.sidebar p {
+body .sidebar p {
   padding: 0;
 }
 
