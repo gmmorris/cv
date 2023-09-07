@@ -12083,11 +12083,32 @@ html {
   html {
     font-size: inherit;
   }
+
+  html body h1, html body .h1, html body h2, html body .h2 {
+    text-align: left;
+  }
+
+  html {
+    font-size: inherit;
+  }
+
+  html body h1, html body .h1, html body h2, html body .h2 {
+    text-align: left;
+  }
 }
 
 @media print {
   html {
     font-size: inherit;
+  }
+
+  html body h1, html body .h1, html body h2, html body .h2 {
+    text-align: left;
+  }
+
+  @page {
+    size: auto;
+    margin-top: 20mm;
   }
 
   .col-print-1 {
@@ -12151,7 +12172,7 @@ html {
   }
 }
 
-body h1, body .h1, body h2, body .h2, body h4, body .h4 {
+body h1 span, body .h1 span, body h2 span, body .h2 span, body h4, body .h4 {
   font-family: Oswald, sans-serif;
 }
 
@@ -12160,8 +12181,7 @@ body h3, body .h3 {
 }
 
 body h1, body .h1 {
-  text-align: center;
-  font-size: 4em;
+  font-size: 3rem;
   font-variant-caps: all-small-caps;
   font-weight: 400;
 }
@@ -12172,10 +12192,18 @@ body h1 em, body .h1 em {
 }
 
 body h2, body .h2 {
-  text-align: center;
-  font-size: 1.5em;
+  padding-top: .1em;
+  font-size: 2rem;
   font-weight: 200;
-  line-height: 1.5;
+  line-height: 2em;
+}
+
+body h1, body .h1, body h2, body .h2 {
+  text-align: center;
+}
+
+body h1 span, body .h1 span, body h2 span, body .h2 span {
+  vertical-align: baseline;
 }
 
 body h3, body .h3 {
@@ -12196,7 +12224,7 @@ body p {
   font-family: Jost\*, Helvetica, Arial, sans-serif;
 }
 
-body span {
+body #skills li, body span {
   font-family: Jost\*, Helvetica, Arial, sans-serif;
 }
 
@@ -12317,7 +12345,6 @@ body span {
 }
 
 #positions > ol > li h4, #positions > ol > li .h4, #edu > ol > li h4, #edu > ol > li .h4 {
-  font-size: 1.3rem;
   font-weight: 400;
   display: inline;
 }
@@ -12336,6 +12363,7 @@ body span {
 
 #positions > ol > li ol, #edu > ol > li ol {
   float: right;
+  line-height: 2em;
 }
 
 #positions > ol > li ol li, #edu > ol > li ol li {
