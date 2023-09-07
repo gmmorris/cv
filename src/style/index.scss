@@ -72,6 +72,21 @@ body {
 		font-family: "Jost*", Helvetica, Arial, sans-serif;
 	}
 }
+
+#download-links {
+	position: static;
+    text-align: right;
+    line-height: 3em;
+    margin-bottom: 0em;
+}
+@media only screen and (min-width: 992px) {
+	#download-links {
+		position: fixed;
+		top: 2em;
+		right: 2em;
+	}
+}
+
 #contact,
 #resume-links {
 	text-align: center;
@@ -100,11 +115,6 @@ body {
 	border-top: 1px solid;
 	border-bottom: 1px solid;
 }
-#download-links {
-	position: fixed;
-	top: 2em;
-	right: 2em;
-}
 
 #skills {
 	ul {
@@ -112,7 +122,7 @@ body {
 		li {
 			list-style: none;
 			text-align: justify;
-			font-size: small;
+			// font-size: small;
 			margin-bottom: 0.5em;
 		}
 	}
