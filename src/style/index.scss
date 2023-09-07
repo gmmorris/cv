@@ -92,6 +92,7 @@ body {
 		font-weight: 400;
 		line-height: 1.5;
 	}
+
 	p {
 		padding: 0em;
 		text-align: justify;
@@ -100,171 +101,196 @@ body {
 	#skills li, span {
 		font-family: "Jost*", Helvetica, Arial, sans-serif;
 	}
-}
-
-#download-links {
-	position: static;
-    text-align: right;
-    line-height: 3em;
-    margin-bottom: 0em;
-}
-@media only screen and (min-width: 992px) {
+	
 	#download-links {
-		position: fixed;
-		top: 2em;
-		right: 2em;
-	}
-}
-
-#contact,
-#resume-links {
-	text-align: center;
-	margin-left: 0em;
-	margin-right: 0em;
-	li {
-		font-family: "Jost*", Helvetica, Arial, sans-serif;
-		display: inline;
-		span {
-			color: initial;
-		}
-		a {
-			font-style: normal;
-			font-weight: lighter;
-			em {
-				font-weight: initial;
-			}
-		}
-	}
-	li + li {
-		margin-left: 3em;
-	}
-}
-#resume-links {
-	padding: 1em 0em;
-	border-top: 1px solid;
-	border-bottom: 1px solid;
-}
-
-#skills {
-	ul {
-		padding: 0em;
-		li {
-			list-style: none;
-			text-align: justify;
-			// font-size: small;
-			margin-bottom: 0.5em;
-		}
-	}
-}
-
-#oss {
-	page-break-inside: avoid;
-	> a {
+		position: static;
 		text-align: right;
-		display: block;
+		line-height: 3em;
+		margin-bottom: 0em;
 	}
-	> span {
-		position: relative;
-		top: -0.7em;
-		font-size: 1em;
+	@media only screen and (min-width: 992px) {
+		#download-links {
+			position: fixed;
+			top: 2em;
+			right: 2em;
+		}
+	}
+	
+	#contact,
+	#resume-links {
 		text-align: center;
-	}
-	ul {
+		margin-left: 0em;
+		margin-right: 0em;
 		li {
-			padding-bottom: 0.5em;
+			font-family: "Jost*", Helvetica, Arial, sans-serif;
+			display: inline;
 			span {
 				color: initial;
-				font-weight: normal;
 			}
 			a {
-				text-decoration: none;
+				font-style: normal;
+				font-weight: lighter;
+				em {
+					font-weight: initial;
+				}
 			}
-			.fa-li.fa-stack {
-				position: absolute;
-				left: -3em;
-				@extend .d-print-none;
+		}
+		li + li {
+			margin-left: 3em;
+		}
+	}
+	#resume-links {
+		padding: 1em 0em;
+		border-top: 1px solid;
+		border-bottom: 1px solid;
+	}
+	
+	#profile {
+		p {
+			padding: 0em 1em 0em 1em;
+		}
+	}
+	@media only screen and (min-width: 992px) {
+		#profile {
+			p {
+				padding: 0em 3em 0em 1em;
 			}
 		}
 	}
-	> div {
-		margin-left: -2.5em;
+	
+	#skills {
+		ul {
+			padding: 0em;
+			li {
+				list-style: none;
+				text-align: justify;
+				// font-size: small;
+				margin-bottom: 0.5em;
+			}
+		}
 	}
-	> p {
-		padding: 0em;
-	}
-}
-
-#positions,
-#edu {
-	h3 {
-		text-align: left;
-	}
-	> ol {
-		padding-inline-start: 0em;
-		margin-block-start: 0em;
-		> li {
-			page-break-inside: avoid;
+	
+	#oss {
+		page-break-inside: avoid;
+		> a {
+			text-align: right;
+			display: block;
+		}
+		> span {
 			position: relative;
-			list-style: none;
-			h4 {
-				display: inline;
-				font-weight: 400;
-				// font-size: 1.3rem;
+			top: -0.7em;
+			font-size: 1em;
+			text-align: center;
+		}
+		ul {
+			li {
+				padding-bottom: 0.5em;
+				span {
+					color: initial;
+					font-weight: normal;
+				}
+				a {
+					text-decoration: none;
+				}
+				.fa-li.fa-stack {
+					position: absolute;
+					left: -3em;
+					@extend .d-print-none;
+				}
 			}
-			h4 + em {
-				display: inline;
-				font-family: "Oswald", sans-serif;
-				font-weight: 400;
-				font-style: normal;
-				padding-left: 1em;
-			}
-			p {
-				padding: 1em 0em 0em 1em;
-			}
-			ol {
-				line-height: 2em;
-				float: right;
-				li {
+		}
+		> div {
+			margin-left: -2.5em;
+		}
+		> p {
+			padding: 0em;
+		}
+	}
+	
+	#positions,
+	#edu {
+		h3 {
+			text-align: left;
+		}
+		> ol {
+			padding-inline-start: 0em;
+			margin-block-start: 0em;
+			> li {
+				page-break-inside: avoid;
+				position: relative;
+				list-style: none;
+				h4 {
 					display: inline;
+					font-weight: 400;
+					// font-size: 1.3rem;
 				}
-				li + li:before {
-					content: "-";
-					margin: 0em 0.25em;
+				h4 + em {
+					display: inline;
+					font-family: "Oswald", sans-serif;
+					font-weight: 400;
+					font-style: normal;
+					padding-left: 1em;
+				}
+				p {
+					padding: 1em 1em 0em 1em;
+				}
+				ol {
+					line-height: 2em;
+					float: right;
+					li {
+						display: inline;
+					}
+					li + li:before {
+						content: "-";
+						margin: 0em 0.25em;
+					}
 				}
 			}
 		}
 	}
-}
-
-#edu {
-	page-break-inside: avoid;
-	> ol {
-		> li {
-			margin: 0em;
-			h5 + em,
-			h4 + em,
-			p {
-				display: block;
-			}
-			p {
-				padding: 1em 0em;
-			}
-			h5,
-			em {
-				font-family: "Oswald", sans-serif;
-				font-weight: 100;
-				font-style: normal;
+	@media only screen and (min-width: 992px) {
+		#positions,
+		#edu {
+			> ol {
+				> li {
+					p {
+						padding: 1em 0em 0em 1em;
+					}
+				}
 			}
 		}
 	}
-}
-
-.sidebar {
-	p {
-		padding: 0em;
+	
+	#edu {
+		page-break-inside: avoid;
+		> ol {
+			> li {
+				margin: 0em;
+				h5 + em,
+				h4 + em,
+				p {
+					display: block;
+				}
+				p {
+					padding: 1em 0em;
+				}
+				h5,
+				em {
+					font-family: "Oswald", sans-serif;
+					font-weight: 100;
+					font-style: normal;
+				}
+			}
+		}
 	}
+	
+	.sidebar {
+		p {
+			padding: 0em;
+		}
+	}
+	
+	// #who-am-i {
+	// 	padding: 1rem;
+	// }
 }
-
-// #who-am-i {
-// 	padding: 1rem;
-// }
