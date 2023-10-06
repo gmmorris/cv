@@ -12281,6 +12281,12 @@ body #profile p {
   padding: 0 1em;
 }
 
+@media only screen and (min-width: 992px) {
+  body #profile p {
+    padding: 0 3em 0 1em;
+  }
+}
+
 body #skills ul {
   padding: 0;
 }
@@ -12362,7 +12368,7 @@ body #positions > ol > li h4 + em, body #positions > ol > li .h4 + em, body #edu
 }
 
 body #positions > ol > li p, body #edu > ol > li p {
-  padding: 1em 0 0 1em;
+  padding: 1em 1em 0;
 }
 
 body #positions > ol > li ol, body #edu > ol > li ol {
@@ -12377,6 +12383,12 @@ body #positions > ol > li ol li, body #edu > ol > li ol li {
 body #positions > ol > li ol li + li:before, body #edu > ol > li ol li + li:before {
   content: "-";
   margin: 0 .25em;
+}
+
+@media only screen and (min-width: 992px) {
+  body #positions > ol > li p, body #edu > ol > li p {
+    padding: 1em 0 0 1em;
+  }
 }
 
 body #edu {
