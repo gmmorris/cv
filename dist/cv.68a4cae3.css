@@ -12408,21 +12408,54 @@ body #positions > ol > li h4 + em, body #positions > ol > li .h4 + em, body #edu
 }
 
 body #positions > ol > li p, body #edu > ol > li p {
-  padding: 1em 1em 0;
+  padding: 1em 0 0 1em;
 }
 
-body #positions > ol > li ol, body #edu > ol > li ol {
+body #positions > ol > li p + p, body #edu > ol > li p + p {
+  padding: 0 0 0 1em;
+}
+
+body #positions > ol > li ol.period, body #edu > ol > li ol.period {
   float: right;
   line-height: 2em;
 }
 
-body #positions > ol > li ol li, body #edu > ol > li ol li {
+body #positions > ol > li ol.period li, body #edu > ol > li ol.period li {
   display: inline;
 }
 
-body #positions > ol > li ol li + li:before, body #edu > ol > li ol li + li:before {
+body #positions > ol > li ol.period li + li:before, body #edu > ol > li ol.period li + li:before {
   content: "-";
   margin: 0 .25em;
+}
+
+body #positions #earlierExperience ol, body #edu #earlierExperience ol {
+  padding: 1em 0 0;
+}
+
+body #positions #earlierExperience ol.period, body #edu #earlierExperience ol.period {
+  padding: 0;
+}
+
+body #positions #earlierExperience ol > li, body #edu #earlierExperience ol > li {
+  list-style: none;
+}
+
+body #positions #earlierExperience ol > li h4, body #positions #earlierExperience ol > li .h4, body #edu #earlierExperience ol > li h4, body #edu #earlierExperience ol > li .h4 {
+  font-weight: 100;
+  display: inline;
+}
+
+body #positions #earlierExperience ol > li h4 + em, body #positions #earlierExperience ol > li .h4 + em, body #edu #earlierExperience ol > li h4 + em, body #edu #earlierExperience ol > li .h4 + em {
+  padding-left: 1em;
+  font-family: Oswald, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  display: inline;
+}
+
+body #positions #earlierExperience ol > li p, body #edu #earlierExperience ol > li p {
+  padding: .5em 0 0;
 }
 
 @media only screen and (width >= 992px) {

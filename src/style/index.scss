@@ -232,9 +232,12 @@ body {
 					padding-left: 1em;
 				}
 				p {
-					padding: 1em 1em 0em 1em;
+					padding: 1em 0em 0em 1em;
 				}
-				ol {
+				p + p {
+					padding: 0em 0em 0em 1em;
+				}
+				ol.period {
 					line-height: 2em;
 					float: right;
 					li {
@@ -243,6 +246,31 @@ body {
 					li + li:before {
 						content: "-";
 						margin: 0em 0.25em;
+					}
+				}
+			}
+		}
+		#earlierExperience {
+			ol {
+				padding: 1em 0em 0em 0em;
+				&.period {
+					padding: 0em;
+				}
+				> li {
+					list-style: none;
+					h4 {
+						display: inline;
+						font-weight: 100;
+					}
+					h4 + em {
+						display: inline;
+						font-family: "Oswald", sans-serif;
+						font-weight: 200;
+						font-style: normal;
+						padding-left: 1em;
+					}
+					p {
+						padding: 0.5em 0em 0em 0em;
 					}
 				}
 			}
