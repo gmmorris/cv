@@ -12146,6 +12146,28 @@ html {
     text-align: left;
   }
 
+  html body h1, html body .h1 {
+    font-size: 3rem;
+  }
+
+  html body h2, html body .h2 {
+    font-size: 2rem;
+  }
+
+  html body #resume-links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-bottom: 0;
+  }
+
+  html body #profile p {
+    padding: 0 1em 0 0;
+  }
+
+  html body #skills h4, html body #skills .h4 {
+    white-space: nowrap;
+    font-size: 1.25em;
+  }
+
   @page {
     size: auto;
     margin-top: 20mm;
@@ -12210,6 +12232,10 @@ html {
     float: left;
     width: 100%;
   }
+
+  body #edu > ol > li div em {
+    font-size: 1em;
+  }
 }
 
 body h1 span, body .h1 span, body h2 span, body .h2 span, body h4, body .h4 {
@@ -12221,7 +12247,8 @@ body h3, body .h3 {
 }
 
 body h1, body .h1 {
-  font-size: 3rem;
+  white-space: nowrap;
+  font-size: 2rem;
   font-variant-caps: all-small-caps;
   font-weight: 400;
 }
@@ -12233,7 +12260,7 @@ body h1 em, body .h1 em {
 
 body h2, body .h2 {
   padding-top: .1em;
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-weight: 200;
   line-height: 2em;
 }
@@ -12271,6 +12298,7 @@ body #skills li, body span {
 body #download-links {
   text-align: right;
   margin-bottom: 0;
+  font-size: small;
   line-height: 3em;
   position: static;
 }
@@ -12278,15 +12306,19 @@ body #download-links {
 @media only screen and (width >= 992px) {
   body #download-links {
     position: fixed;
-    top: 2em;
+    top: 1em;
     right: 2em;
   }
 }
 
 body #contact, body #resume-links {
   text-align: center;
+  justify-items: center;
+  gap: 1rem;
   margin-left: 0;
   margin-right: 0;
+  font-size: medium;
+  display: grid;
 }
 
 body #contact li, body #resume-links li {
@@ -12307,23 +12339,42 @@ body #contact li a em, body #resume-links li a em {
   font-weight: initial;
 }
 
-body #contact li + li, body #resume-links li + li {
-  margin-left: 3em;
-}
-
 body #resume-links {
   border-top: 1px solid;
   border-bottom: 1px solid;
-  padding: 1em 0;
+  gap: .5rem;
+  padding: .5em 0;
+}
+
+body #contact {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
 }
 
 body #profile p {
-  padding: 0 1em;
+  padding: 0;
 }
 
 @media only screen and (width >= 992px) {
+  body h1, body .h1 {
+    font-size: 3rem;
+  }
+
+  body h2, body .h2 {
+    font-size: 2rem;
+  }
+
+  body .headline {
+    flex-direction: row;
+    display: flex;
+  }
+
+  body #resume-links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   body #profile p {
-    padding: 0 3em 0 1em;
+    padding: 0 1em 0 0;
   }
 }
 
@@ -12332,12 +12383,11 @@ body #skills ul {
 }
 
 body #skills ul li {
-  text-align: justify;
   margin-bottom: .5em;
   list-style: none;
 }
 
-body #oss {
+body #who-am-i, body #oss {
   page-break-inside: avoid;
 }
 
@@ -12379,88 +12429,133 @@ body #oss > p {
   padding: 0;
 }
 
+body section + section {
+  margin-top: 2em;
+}
+
 body #positions h3, body #positions .h3, body #edu h3, body #edu .h3 {
   text-align: left;
 }
 
-body #positions > ol, body #edu > ol {
+body #positions ol, body #edu ol {
   margin-block-start: 0;
   padding-inline-start: 0;
 }
 
-body #positions > ol > li, body #edu > ol > li {
+body #positions ol li, body #edu ol li {
   page-break-inside: avoid;
+  flex-direction: column;
   list-style: none;
-  position: relative;
+  display: flex;
 }
 
-body #positions > ol > li h4, body #positions > ol > li .h4, body #edu > ol > li h4, body #edu > ol > li .h4 {
-  font-weight: 400;
-  display: inline;
+body #positions ol li div, body #edu ol li div {
+  flex-direction: row;
+  align-items: baseline;
+  gap: .75rem;
+  display: flex;
 }
 
-body #positions > ol > li h4 + em, body #positions > ol > li .h4 + em, body #edu > ol > li h4 + em, body #edu > ol > li .h4 + em {
-  padding-left: 1em;
-  font-family: Oswald, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  display: inline;
-}
-
-body #positions > ol > li p, body #edu > ol > li p {
-  padding: 1em 0 0 1em;
-}
-
-body #positions > ol > li p + p, body #edu > ol > li p + p {
-  padding: 0 0 0 1em;
-}
-
-body #positions > ol > li ol.period, body #edu > ol > li ol.period {
-  float: right;
-  line-height: 2em;
-}
-
-body #positions > ol > li ol.period li, body #edu > ol > li ol.period li {
-  display: inline;
-}
-
-body #positions > ol > li ol.period li + li:before, body #edu > ol > li ol.period li + li:before {
-  content: "-";
-  margin: 0 .25em;
-}
-
-body #positions #earlierExperience ol, body #edu #earlierExperience ol {
-  padding: 1em 0 0;
-}
-
-body #positions #earlierExperience ol.period, body #edu #earlierExperience ol.period {
-  padding: 0;
-}
-
-body #positions #earlierExperience ol > li, body #edu #earlierExperience ol > li {
-  list-style: none;
-}
-
-body #positions #earlierExperience ol > li h4, body #positions #earlierExperience ol > li .h4, body #edu #earlierExperience ol > li h4, body #edu #earlierExperience ol > li .h4 {
-  font-weight: 100;
-  display: inline;
-}
-
-body #positions #earlierExperience ol > li h4 + em, body #positions #earlierExperience ol > li .h4 + em, body #edu #earlierExperience ol > li h4 + em, body #edu #earlierExperience ol > li .h4 + em {
-  padding-left: 1em;
-  font-family: Oswald, sans-serif;
-  font-style: normal;
+body #positions ol li div h4, body #positions ol li div .h4, body #edu ol li div h4, body #edu ol li div .h4 {
+  white-space: nowrap;
   font-weight: 200;
   display: inline;
 }
 
-body #positions #earlierExperience ol > li p, body #edu #earlierExperience ol > li p {
+body #positions ol li div .em-wrapper, body #edu ol li div .em-wrapper {
+  flex-grow: 1;
+}
+
+body #positions ol li div em, body #edu ol li div em {
+  flex-grow: 1;
+  font-family: Oswald, sans-serif;
+  font-size: 1.2em;
+  font-style: normal;
+  font-weight: 400;
+}
+
+body #positions ol li div em span, body #edu ol li div em span {
+  text-wrap: nowrap;
+  font-family: Oswald, sans-serif;
+  font-size: 1em;
+  font-weight: lighter;
+}
+
+body #positions ol li div ol.period, body #edu ol li div ol.period {
+  white-space: nowrap;
+  line-height: 2em;
+}
+
+body #positions ol li div ol.period li, body #edu ol li div ol.period li {
+  display: inline;
+}
+
+body #positions ol li div ol.period li + li:before, body #edu ol li div ol.period li + li:before {
+  content: "-";
+  margin: 0 .25em;
+}
+
+body #positions ol li p, body #edu ol li p {
+  flex-grow: 1;
+  width: 100%;
   padding: .5em 0 0;
 }
 
+body #positions ol li p + p, body #edu ol li p + p {
+  padding: 0;
+}
+
+body #positions ol li#earlierExperience ol, body #edu ol li#earlierExperience ol {
+  padding: 1em 0 0;
+}
+
+body #positions ol li#earlierExperience ol.period, body #edu ol li#earlierExperience ol.period {
+  padding: 0;
+}
+
+body #positions ol li#earlierExperience ol li, body #edu ol li#earlierExperience ol li {
+  list-style: none;
+}
+
+body #positions ol li#earlierExperience ol li h4, body #positions ol li#earlierExperience ol li .h4, body #edu ol li#earlierExperience ol li h4, body #edu ol li#earlierExperience ol li .h4 {
+  font-weight: 100;
+  display: inline;
+}
+
+body #positions ol li#earlierExperience ol li em, body #edu ol li#earlierExperience ol li em {
+  font-family: Oswald, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  display: inline;
+}
+
+body #positions ol li#earlierExperience ol li em span, body #edu ol li#earlierExperience ol li em span {
+  text-wrap: nowrap;
+  font-family: Oswald, sans-serif;
+  font-size: 1em;
+}
+
+body #positions ol li#earlierExperience ol li p, body #edu ol li#earlierExperience ol li p {
+  padding: .5em 0 0;
+}
+
+@media (width <= 450px) {
+  body #positions ol li div em, body #positions ol li#earlierExperience div em {
+    display: block;
+  }
+}
+
 @media only screen and (width >= 992px) {
-  body #positions > ol > li p, body #edu > ol > li p {
-    padding: 1em 0 0 1em;
+  body #positions > ol > li div .em-wrapper, body #edu > ol > li div .em-wrapper {
+    display: inline;
+  }
+
+  body #positions > ol > li div p, body #edu > ol > li div p {
+    padding: .5em 0 0 1em;
+  }
+
+  body #positions > ol > li div p + p, body #edu > ol > li div p + p {
+    padding: 0 0 0 1em;
   }
 }
 
@@ -12472,18 +12567,33 @@ body #edu > ol > li {
   margin: 0;
 }
 
-body #edu > ol > li h5 + em, body #edu > ol > li .h5 + em, body #edu > ol > li h4 + em, body #edu > ol > li .h4 + em, body #edu > ol > li p {
-  display: block;
+body #edu > ol > li div {
+  flex-flow: wrap;
+  flex: 1;
+  align-items: flex-start;
+  gap: .25rem;
+  display: flex;
+}
+
+body #edu > ol > li div em, body #edu > ol > li div h5, body #edu > ol > li div .h5 {
+  font-family: Oswald, sans-serif;
+}
+
+body #edu > ol > li div em {
+  flex: 0 0 100%;
+  font-size: 1.25em;
+  font-style: normal;
+  font-weight: 400;
+}
+
+body #edu > ol > li div h5, body #edu > ol > li div .h5 {
+  flex: 1 0 auto;
+  font-style: normal;
+  font-weight: 100;
 }
 
 body #edu > ol > li p {
   padding: 1em 0;
-}
-
-body #edu > ol > li h5, body #edu > ol > li .h5, body #edu > ol > li em {
-  font-family: Oswald, sans-serif;
-  font-style: normal;
-  font-weight: 100;
 }
 
 body .sidebar p {

@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "",
 	"scripts": {
-		"dev": "parcel src/index.html",
+		"dev": "parcel src/index.html  --no-cache  --hmr-port 1234",
 		"build": "parcel build src/index.html --dist-dir docs  --public-url ./",
 		"deploy": "git subtree push --prefix docs origin gh-pages"
 	},

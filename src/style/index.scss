@@ -31,6 +31,30 @@ html {
 			h1, h2 {
 				text-align: left;
 			}
+			h1 {
+				font-size: 3rem;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+
+			#resume-links {
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+				margin-bottom: 0;
+			}
+			
+			#profile {
+				p {
+					padding: 0em 1em 0em 0em;
+				}
+			}
+
+			#skills {
+				h4 {
+					white-space: nowrap;
+					font-size: 1.25em;
+				}
+			}
 		}
 	}
 	@page { 
@@ -49,6 +73,10 @@ html {
 	.col-print-10{width:83%; float:left;}
 	.col-print-11{width:92%; float:left;}
 	.col-print-12{width:100%; float:left;}
+
+	body #edu > ol > li div em {
+		font-size: 1em;
+	}
 }
 
 body {
@@ -63,8 +91,9 @@ body {
 	}
 	h1 {
 		font-weight: 400;
-		font-size: 3rem;
+		font-size: 2rem;
 		font-variant-caps: all-small-caps;
+		white-space: nowrap;
 		em {
 			font-style: normal;
 			font-weight: 200;
@@ -73,7 +102,7 @@ body {
 	h2 {
 		padding-top: 0.1em;
 		font-weight: 200;
-		font-size: 2rem;
+		font-size: 1.25rem;
 		line-height: 2em;
 	}
 	h1, h2 {
@@ -107,11 +136,12 @@ body {
 		text-align: right;
 		line-height: 3em;
 		margin-bottom: 0em;
+		font-size: small;
 	}
 	@media only screen and (min-width: 992px) {
 		#download-links {
 			position: fixed;
-			top: 2em;
+			top: 1em;
 			right: 2em;
 		}
 	}
@@ -121,6 +151,10 @@ body {
 		text-align: center;
 		margin-left: 0em;
 		margin-right: 0em;
+		display: grid;
+		gap: 1rem;
+		font-size:medium;
+		justify-items: center;
 		li {
 			font-family: "Jost*", Helvetica, Arial, sans-serif;
 			display: inline;
@@ -135,25 +169,43 @@ body {
 				}
 			}
 		}
-		li + li {
-			margin-left: 3em;
-		}
 	}
 	#resume-links {
-		padding: 1em 0em;
+		padding: 0.5em 0em;
 		border-top: 1px solid;
 		border-bottom: 1px solid;
+		gap: 0.5rem;
+	}
+	#contact {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1rem;
 	}
 	
 	#profile {
 		p {
-			padding: 0em 1em 0em 1em;
+			padding: 0em;
 		}
 	}
 	@media only screen and (min-width: 992px) {
+		h1 {
+			font-size: 3rem;
+		}
+		h2 {
+			font-size: 2rem;
+		}
+		
+		.headline {
+			display:flex;
+			flex-direction: row;
+		}
+
+		#resume-links {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+		
 		#profile {
 			p {
-				padding: 0em 3em 0em 1em;
+				padding: 0em 1em 0em 0em;
 			}
 		}
 	}
@@ -163,13 +215,17 @@ body {
 			padding: 0em;
 			li {
 				list-style: none;
-				text-align: justify;
+				// text-align: justify;
 				// font-size: small;
 				margin-bottom: 0.5em;
 			}
 		}
 	}
 	
+	#who-am-i {
+		page-break-inside: avoid;
+	}
+
 	#oss {
 		page-break-inside: avoid;
 		> a {
@@ -206,83 +262,133 @@ body {
 			padding: 0em;
 		}
 	}
+
+	section + section {
+		margin-top: 2em;
+	}
 	
 	#positions,
 	#edu {
 		h3 {
 			text-align: left;
 		}
-		> ol {
+		ol {
 			padding-inline-start: 0em;
 			margin-block-start: 0em;
-			> li {
+			li {
 				page-break-inside: avoid;
-				position: relative;
 				list-style: none;
-				h4 {
-					display: inline;
-					font-weight: 400;
-					// font-size: 1.3rem;
-				}
-				h4 + em {
-					display: inline;
-					font-family: "Oswald", sans-serif;
-					font-weight: 400;
-					font-style: normal;
-					padding-left: 1em;
+				display: flex;
+				flex-direction: column;
+				div {
+					display: flex; 
+					flex-direction: row;
+					gap: 0.75rem;
+					align-items: baseline;
+					h4 {
+						white-space: nowrap;
+						display: inline;
+						font-weight: 200;
+					}
+					.em-wrapper {
+						flex-grow: 1;
+					}
+					em {
+						flex-grow: 1;
+						font-family: "Oswald", sans-serif;
+						font-weight: 400;
+						font-size: 1.2em;
+						font-style: normal;
+						span {
+							font-family: "Oswald", sans-serif;
+							font-weight: lighter;
+							text-wrap: nowrap;
+							font-size: 1em;
+						}
+					}
+					ol.period {
+						line-height: 2em;
+						white-space: nowrap;
+						li {
+							display: inline;
+						}
+						li + li:before {
+							content: "-";
+							margin: 0em 0.25em;
+						}
+					}
 				}
 				p {
-					padding: 1em 0em 0em 1em;
+					flex-grow: 1;
+					width: 100%;
+					padding: 0.5em 0em 0em 0em;
 				}
 				p + p {
-					padding: 0em 0em 0em 1em;
-				}
-				ol.period {
-					line-height: 2em;
-					float: right;
-					li {
-						display: inline;
-					}
-					li + li:before {
-						content: "-";
-						margin: 0em 0.25em;
-					}
-				}
-			}
-		}
-		#earlierExperience {
-			ol {
-				padding: 1em 0em 0em 0em;
-				&.period {
 					padding: 0em;
 				}
-				> li {
-					list-style: none;
-					h4 {
-						display: inline;
-						font-weight: 100;
-					}
-					h4 + em {
-						display: inline;
-						font-family: "Oswald", sans-serif;
-						font-weight: 200;
-						font-style: normal;
-						padding-left: 1em;
-					}
-					p {
-						padding: 0.5em 0em 0em 0em;
+				&#earlierExperience {
+					ol {
+						padding: 1em 0em 0em 0em;
+						&.period {
+							padding: 0em;
+						}
+						li {
+							list-style: none;
+							h4 {
+								display: inline;
+								font-weight: 100;
+							}
+							em {
+								display: inline;
+								font-family: "Oswald", sans-serif;
+								font-weight: 300;
+								font-style: normal;
+								// padding-left: 1em;
+								span {
+									font-family: "Oswald", sans-serif;
+									// font-weight: normal;
+									text-wrap: nowrap;
+									font-size: 1em;
+								}
+							}
+							p {
+								padding: 0.5em 0em 0em 0em;
+							}
+						}
 					}
 				}
 			}
 		}
 	}
+	@media (max-width: 450px) {	
+		#positions {
+			ol {
+				li, li#earlierExperience {
+					div {
+						em {
+							display: block;
+						}
+					}
+				}
+			}
+		}
+	}
+
 	@media only screen and (min-width: 992px) {
 		#positions,
 		#edu {
 			> ol {
 				> li {
-					p {
-						padding: 1em 0em 0em 1em;
+					div {
+						.em-wrapper {
+							display: inline;
+						}
+						p {
+							padding: 0.5em 0em 0em 1em;
+						}
+						p + p {
+							padding: 0em 0em 0em 1em;
+						}
 					}
 				}
 			}
@@ -294,19 +400,30 @@ body {
 		> ol {
 			> li {
 				margin: 0em;
-				h5 + em,
-				h4 + em,
-				p {
-					display: block;
+				div {
+					display: flex;
+					flex: 1;
+					flex-wrap: wrap;
+					flex-direction: row;
+					align-items: flex-start;
+					gap: 0.25rem;
+					em, h5 {
+						font-family: "Oswald", sans-serif;
+					}
+					em {
+						flex: 0 0 100%;
+						font-weight: 400;
+						font-size: 1.25em;
+						font-style: normal;
+					}
+					h5 {
+						flex: 1 0 auto;
+						font-weight: 100;
+						font-style: normal;
+					}
 				}
 				p {
 					padding: 1em 0em;
-				}
-				h5,
-				em {
-					font-family: "Oswald", sans-serif;
-					font-weight: 100;
-					font-style: normal;
 				}
 			}
 		}
@@ -317,8 +434,4 @@ body {
 			padding: 0em;
 		}
 	}
-	
-	// #who-am-i {
-	// 	padding: 1rem;
-	// }
 }
