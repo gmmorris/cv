@@ -283,18 +283,20 @@ body {
 				div {
 					display: flex; 
 					flex-direction: row;
-					gap: 0.75rem;
+					flex-wrap: wrap;
+					gap: 0em 0.75rem;
 					align-items: baseline;
 					h4 {
 						white-space: nowrap;
 						display: inline;
 						font-weight: 200;
+						flex: 1 1 auto;
 					}
 					.em-wrapper {
-						flex-grow: 1;
+						flex: 1 1 100%;
 					}
 					em {
-						flex-grow: 1;
+						flex: 1 1 100%;
 						font-family: "Oswald", sans-serif;
 						font-weight: 400;
 						font-size: 1.2em;
@@ -363,6 +365,9 @@ body {
 	@media (max-width: 450px) {	
 		#positions {
 			ol {
+				// li > div > em, li > div > .em-wrapper {
+				// 	order: 3;
+				// }
 				li, li#earlierExperience {
 					div {
 						em {
@@ -380,8 +385,22 @@ body {
 			> ol {
 				> li {
 					div {
+						h4 {
+							flex: 0 0 auto;
+						}
 						.em-wrapper {
+							order: 2;
 							display: inline;
+							flex: 0 0 auto;
+							flex-grow: 1;
+						}
+						em {
+							order: 2;
+							flex: 0 0 auto;
+							flex-grow: 1;
+						}
+						.period {
+							order: 3;
 						}
 						p {
 							padding: 0.5em 0em 0em 1em;
