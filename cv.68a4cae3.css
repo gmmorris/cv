@@ -12450,24 +12450,25 @@ body #positions ol li, body #edu ol li {
 }
 
 body #positions ol li div, body #edu ol li div {
-  flex-direction: row;
+  flex-flow: wrap;
   align-items: baseline;
-  gap: .75rem;
+  gap: 0 .75rem;
   display: flex;
 }
 
 body #positions ol li div h4, body #positions ol li div .h4, body #edu ol li div h4, body #edu ol li div .h4 {
   white-space: nowrap;
+  flex: auto;
   font-weight: 200;
   display: inline;
 }
 
 body #positions ol li div .em-wrapper, body #edu ol li div .em-wrapper {
-  flex-grow: 1;
+  flex: 100%;
 }
 
 body #positions ol li div em, body #edu ol li div em {
-  flex-grow: 1;
+  flex: 100%;
   font-family: Oswald, sans-serif;
   font-size: 1.2em;
   font-style: normal;
@@ -12546,8 +12547,23 @@ body #positions ol li#earlierExperience ol li p, body #edu ol li#earlierExperien
 }
 
 @media only screen and (width >= 992px) {
+  body #positions > ol > li div h4, body #positions > ol > li div .h4, body #edu > ol > li div h4, body #edu > ol > li div .h4 {
+    flex: none;
+  }
+
   body #positions > ol > li div .em-wrapper, body #edu > ol > li div .em-wrapper {
+    flex: 1 0 auto;
+    order: 2;
     display: inline;
+  }
+
+  body #positions > ol > li div em, body #edu > ol > li div em {
+    flex: 1 0 auto;
+    order: 2;
+  }
+
+  body #positions > ol > li div .period, body #edu > ol > li div .period {
+    order: 3;
   }
 
   body #positions > ol > li div p, body #edu > ol > li div p {
