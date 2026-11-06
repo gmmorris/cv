@@ -1,6 +1,2 @@
-node_modules
-.cache
+_site
 .DS_Store
-.parcel-cache
-*.css.map
-*.js.map
