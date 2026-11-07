@@ -1,0 +1,712 @@
+/* ---------- Fonts (self-hosted Latin subsets from Google Fonts) ---------- */
+
+@font-face {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 400 700;
+	font-display: swap;
+	src: url(fonts/inter.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: "Inter";
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(fonts/inter-italic.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: "Source Serif 4";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(fonts/source-serif-4-bold.woff2) format("woff2");
+}
+
+/* ---------- Theme tokens ---------- */
+
+:root {
+	color-scheme: light;
+	--bg: #ffffff;
+	--ink: #1b1d1c;
+	--muted: #5f6662;
+	--accent: #1f5a47;
+	--rule: #e2e5e3;
+	--link-line: color-mix(in srgb, var(--accent) 45%, transparent);
+
+	--sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	--serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+
+	--date-col: 7.25rem;
+	--gap: 1.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) {
+		color-scheme: dark;
+		--bg: #111513;
+		--ink: #e6eae8;
+		--muted: #9aa39f;
+		--accent: #7fc8ab;
+		--rule: #26302c;
+	}
+}
+
+:root[data-theme="dark"] {
+	color-scheme: dark;
+	--bg: #111513;
+	--ink: #e6eae8;
+	--muted: #9aa39f;
+	--accent: #7fc8ab;
+	--rule: #26302c;
+}
+
+/* ---------- Base ---------- */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--ink);
+	font: 400 1rem/1.6 var(--sans);
+	font-feature-settings: "cv11", "ss01";
+	-webkit-font-smoothing: antialiased;
+}
+
+p,
+ul,
+dl,
+dd,
+h1,
+h2,
+h3 {
+	margin: 0;
+}
+
+a {
+	color: var(--accent);
+	text-decoration: underline;
+	text-decoration-color: var(--link-line);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.18em;
+}
+
+a:hover {
+	text-decoration-color: currentColor;
+}
+
+a:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+	border-radius: 2px;
+}
+
+strong,
+b {
+	font-weight: 600;
+}
+
+/* ---------- Layout ---------- */
+
+.cv {
+	max-width: 54rem;
+	margin: 0 auto;
+	padding: clamp(1.5rem, 5vw, 4rem) clamp(1rem, 5vw, 2.5rem) 4rem;
+}
+
+/* ---------- Masthead ---------- */
+
+.masthead {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 1.25rem 2rem;
+	padding-bottom: 1.25rem;
+	border-bottom: 3px solid var(--accent);
+}
+
+h1 {
+	font: 700 clamp(2.1rem, 7vw, 3.1rem) / 1.05 var(--serif);
+	letter-spacing: -0.01em;
+}
+
+.aka {
+	margin-top: 0.5rem;
+	color: var(--muted);
+	font-size: 0.9rem;
+}
+
+.title {
+	margin-top: 0.75rem;
+	color: var(--accent);
+	font-size: 1.3rem;
+	font-weight: 500;
+}
+
+.contact {
+	list-style: none;
+	padding: 0;
+	text-align: right;
+	font-size: 0.95rem;
+	line-height: 1.7;
+}
+
+.contact a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.contact a:hover {
+	color: var(--accent);
+	text-decoration: underline;
+}
+
+.contact .download {
+	display: inline-block;
+	margin-top: 0.5rem;
+	padding: 0.2rem 0.75rem;
+	border: 1px solid var(--accent);
+	border-radius: 999px;
+	color: var(--accent);
+	font-size: 0.85rem;
+	font-weight: 500;
+}
+
+.contact .download:hover {
+	background: var(--accent);
+	color: var(--bg);
+	text-decoration: none;
+}
+
+/* ---------- Sections ---------- */
+
+section {
+	margin-top: 2rem;
+}
+
+h2 {
+	margin-bottom: 0.85rem;
+	color: var(--accent);
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+#experience h2,
+#earlier h2,
+#toolset h2,
+.columns h2 {
+	padding-bottom: 0.4rem;
+	border-bottom: 1px solid var(--rule);
+}
+
+/* ---------- Experience entries ---------- */
+
+.entry {
+	display: grid;
+	grid-template-columns: var(--date-col) 1fr;
+	gap: 0 var(--gap);
+	margin-top: 1.35rem;
+}
+
+.when {
+	color: var(--muted);
+	font-size: 0.9rem;
+	line-height: 1.85;
+	font-variant-numeric: tabular-nums;
+}
+
+.when span {
+	white-space: nowrap;
+}
+
+h3 {
+	font-size: 1.1rem;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+h3 b {
+	font-weight: 600;
+}
+
+.entry ul {
+	margin-top: 0.5rem;
+	padding-left: 1.1rem;
+}
+
+.entry li {
+	margin-top: 0.45rem;
+	padding-left: 0.15rem;
+}
+
+.entry li::marker {
+	color: var(--muted);
+}
+
+.outcome b {
+	color: var(--accent);
+}
+
+.entry.compact {
+	margin-top: 0.6rem;
+}
+
+.entry.compact .when {
+	line-height: 1.6;
+}
+
+/* ---------- Toolset ---------- */
+
+.skills > div {
+	display: grid;
+	grid-template-columns: 12rem 1fr;
+	gap: 0 var(--gap);
+	margin-top: 0.7rem;
+}
+
+.skills dt {
+	font-weight: 600;
+}
+
+.skills ul {
+	list-style: none;
+	padding: 0;
+}
+
+.skills li {
+	display: inline;
+}
+
+.skills li + li::before {
+	content: "·";
+	margin: 0 0.5em;
+	color: var(--muted);
+}
+
+/* ---------- Education & open source ---------- */
+
+.columns {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0 2.5rem;
+}
+
+.columns p + p {
+	margin-top: 0.75rem;
+}
+
+a.quiet {
+	color: var(--muted);
+	text-decoration: none;
+}
+
+/* ---------- Small screens ---------- */
+
+@media screen and (max-width: 40rem) {
+	.masthead {
+		flex-direction: column;
+	}
+
+	.contact {
+		text-align: left;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.1rem 1rem;
+		line-height: 1.6;
+	}
+
+	.contact .screen-only {
+		flex-basis: 100%;
+	}
+
+	.entry,
+	.skills > div,
+	.columns {
+		grid-template-columns: 1fr;
+	}
+
+	.entry {
+		margin-top: 1.6rem;
+	}
+
+	.entry .when {
+		font-size: 0.8rem;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		line-height: 1.4;
+	}
+
+	.when span {
+		white-space: normal;
+	}
+
+	.entry.compact {
+		margin-top: 0.9rem;
+	}
+
+	.skills > div {
+		margin-top: 0.9rem;
+	}
+
+	.columns section + section {
+		margin-top: 2rem;
+	}
+}
+
+/* ---------- Screen-only enhancements (never printed) ---------- */
+
+@media screen {
+	:root {
+		--gap: 2.25rem;
+		--tint: color-mix(in srgb, var(--accent) 8%, var(--bg));
+		--tint-line: color-mix(in srgb, var(--accent) 22%, transparent);
+	}
+
+	/* Timeline rail: a line through the gap beside the dates, one dot per entry */
+
+	.entry {
+		--rail-x: calc(var(--date-col) + var(--gap) / 2);
+		--dot-y: 0.83rem;
+		--step: 1.35rem;
+		--dot: 0.7rem;
+		position: relative;
+	}
+
+	.entry.compact {
+		--dot-y: 0.8rem;
+		--step: 0.6rem;
+		--dot: 0.5rem;
+	}
+
+	.entry::before,
+	.entry::after {
+		content: "";
+		position: absolute;
+		left: var(--rail-x);
+		transform: translateX(-50%);
+	}
+
+	.entry::before {
+		top: var(--dot-y);
+		bottom: calc(-1 * (var(--step) + var(--dot-y)));
+		width: 2px;
+		background: var(--tint-line);
+	}
+
+	.entry:last-child::before {
+		content: none;
+	}
+
+	.entry::after {
+		top: calc(var(--dot-y) - var(--dot) / 2);
+		width: var(--dot);
+		height: var(--dot);
+		border: 2px solid var(--accent);
+		border-radius: 50%;
+		background: var(--bg);
+		transition: background-color 150ms ease, box-shadow 150ms ease;
+	}
+
+	#experience .entry:first-of-type::after {
+		background: var(--accent);
+		box-shadow: 0 0 0 4px var(--tint-line);
+	}
+
+	.entry .when {
+		transition: color 150ms ease;
+	}
+
+	.entry:hover::after {
+		background: var(--accent);
+		box-shadow: 0 0 0 4px var(--tint-line);
+	}
+
+	.entry:hover .when {
+		color: var(--accent);
+	}
+
+	/* Toolset as chips */
+
+	.skills li {
+		display: inline-block;
+		margin: 0 0.3rem 0.4rem 0;
+		padding: 0.1rem 0.65rem;
+		border: 1px solid var(--tint-line);
+		border-radius: 999px;
+		background: var(--tint);
+		font-size: 0.9rem;
+	}
+
+	.skills li + li::before {
+		content: none;
+	}
+
+	.skills dt {
+		padding-top: 0.15rem;
+	}
+
+	/* Links to essays on gidi.io get an arrow and a hint */
+
+	.cv a[href^="https://gidi.io/"]:not(.contact a) {
+		position: relative;
+	}
+
+	.cv a[href^="https://gidi.io/"]:not(.contact a)::after {
+		/* An empty inline box (not inline-block) so the arrow never wraps away from the last word */
+		content: "";
+		padding-left: 0.75em;
+		background: currentColor;
+		-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M3 1h6v6M9 1 1 9' fill='none' stroke='black' stroke-width='1.6'/%3E%3C/svg%3E") right 25% / 0.55em no-repeat;
+		mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M3 1h6v6M9 1 1 9' fill='none' stroke='black' stroke-width='1.6'/%3E%3C/svg%3E") right 25% / 0.55em no-repeat;
+	}
+}
+
+@media screen and (hover: hover) {
+	.cv a[href^="https://gidi.io/"]:not(.contact a)::before {
+		content: "Read the essay on gidi.io";
+		position: absolute;
+		bottom: calc(100% + 0.4rem);
+		left: 50%;
+		transform: translate(-50%, 0.25rem);
+		padding: 0.25rem 0.55rem;
+		border-radius: 0.4rem;
+		background: var(--ink);
+		color: var(--bg);
+		font-size: 0.75rem;
+		font-weight: 500;
+		white-space: nowrap;
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity 120ms ease, transform 120ms ease;
+	}
+
+	.cv a[href^="https://gidi.io/"]:not(.contact a):hover::before,
+	.cv a[href^="https://gidi.io/"]:not(.contact a):focus-visible::before {
+		opacity: 1;
+		transform: translate(-50%, 0);
+	}
+}
+
+@media screen and (max-width: 40rem) {
+	/* Rail moves to the left edge when dates stack above roles */
+	.entry {
+		--rail-x: 0.35rem;
+		--dot-y: 0.56rem;
+		--step: 1.6rem;
+		padding-left: 1.5rem;
+	}
+
+	.entry.compact {
+		--dot-y: 0.56rem;
+		--step: 0.9rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		transition: none !important;
+	}
+}
+
+/* ---------- Print / PDF (A4) ---------- */
+
+@page {
+	size: A4;
+	margin: 24mm 12.8mm 8mm;
+
+	@top-left {
+		margin-bottom: 3.5mm;
+		content: "Gidi Meir Bravo-Rose";
+		vertical-align: bottom;
+		padding-bottom: 2.5mm;
+		border-bottom: 0.6mm solid #1f5a47;
+		color: #1b1d1c;
+		font: 700 11.5pt "Source Serif 4", Georgia, serif;
+	}
+
+	@top-center {
+		margin-bottom: 3.5mm;
+		content: "";
+		border-bottom: 0.6mm solid #1f5a47;
+	}
+
+	@top-right {
+		margin-bottom: 3.5mm;
+		content: "Engineering Leader · Page " counter(page) " of " counter(pages);
+		vertical-align: bottom;
+		padding-bottom: 2.5mm;
+		border-bottom: 0.6mm solid #1f5a47;
+		color: #5f6662;
+		font: 400 9pt "Inter", sans-serif;
+	}
+}
+
+@page :first {
+	margin-top: 11mm;
+
+	/* Empty (not "none") so Chrome doesn't put its own date/title header here on ⌘P */
+	@top-left { content: ""; border: 0; }
+	@top-center { content: ""; border: 0; }
+	@top-right { content: ""; border: 0; }
+}
+
+@media print {
+	:root,
+	:root[data-theme="dark"] {
+		color-scheme: light;
+		--bg: #ffffff;
+		--ink: #1b1d1c;
+		--muted: #5f6662;
+		--accent: #1f5a47;
+		--rule: #e2e5e3;
+		--date-col: 21.5mm;
+		--gap: 4.5mm;
+	}
+
+	body {
+		font-size: 9.5pt;
+		line-height: 1.41;
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+
+	.cv {
+		max-width: none;
+		padding: 0;
+	}
+
+	.screen-only {
+		display: none;
+	}
+
+	h1 {
+		font-size: 28pt;
+	}
+
+	.aka {
+		font-size: 8.8pt;
+		margin-top: 1.5mm;
+	}
+
+	.title {
+		font-size: 13pt;
+		margin-top: 2.5mm;
+	}
+
+	.contact {
+		font-size: 9.6pt;
+		line-height: 1.55;
+	}
+
+	.masthead {
+		padding-bottom: 4mm;
+		border-bottom-width: 0.7mm;
+	}
+
+	section {
+		margin-top: 4.2mm;
+	}
+
+	h2 {
+		font-size: 8.5pt;
+		margin-bottom: 2mm;
+	}
+
+	#experience h2,
+	#earlier h2,
+	#toolset h2,
+	.columns h2 {
+		padding-bottom: 1.2mm;
+	}
+
+	h3 {
+		font-size: 11pt;
+	}
+
+	.when {
+		font-size: 8.8pt;
+		line-height: 1.75;
+	}
+
+	.entry {
+		margin-top: 3.4mm;
+	}
+
+	.entry li,
+	.entry.compact {
+		break-inside: avoid;
+	}
+
+	h3 {
+		break-after: avoid;
+	}
+
+	.entry ul {
+		margin-top: 1.5mm;
+		padding-left: 3.4mm;
+	}
+
+	.entry li {
+		margin-top: 0.9mm;
+		padding-left: 0;
+	}
+
+	.entry.compact {
+		margin-top: 1mm;
+	}
+
+	.entry.compact .when {
+		line-height: 1.5;
+	}
+
+	h2 {
+		break-after: avoid;
+	}
+
+	/* Roles fill pages 1–2; the toolset always starts page 3 */
+	#toolset {
+		break-before: page;
+		margin-top: 0;
+	}
+
+	#toolset,
+	.columns {
+		break-inside: avoid;
+	}
+
+	.skills > div {
+		grid-template-columns: 50mm 1fr;
+		margin-top: 2.5mm;
+		break-inside: avoid;
+	}
+
+	.columns {
+		gap: 0 9mm;
+	}
+
+	.columns p + p {
+		margin-top: 2.5mm;
+	}
+
+	.contact a,
+	a.quiet {
+		color: inherit;
+		text-decoration: none;
+	}
+}
