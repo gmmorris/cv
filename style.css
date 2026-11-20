@@ -581,7 +581,7 @@ a.quiet {
 
 	body {
 		font-size: 9.5pt;
-		line-height: 1.41;
+		line-height: 1.39;
 		-webkit-print-color-adjust: exact;
 		print-color-adjust: exact;
 	}
@@ -645,7 +645,7 @@ a.quiet {
 	}
 
 	.entry {
-		margin-top: 3.4mm;
+		margin-top: 3mm;
 	}
 
 	.entry li,
@@ -663,7 +663,7 @@ a.quiet {
 	}
 
 	.entry li {
-		margin-top: 0.9mm;
+		margin-top: 0.6mm;
 		padding-left: 0;
 	}
 
